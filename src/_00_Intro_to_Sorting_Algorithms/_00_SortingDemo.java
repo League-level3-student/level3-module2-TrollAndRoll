@@ -3,7 +3,7 @@ package _00_Intro_to_Sorting_Algorithms;
 public class _00_SortingDemo {
     public static void main(String[] args) {
         /*
-         * Bubble Sort is a simple sorting algorithm that uses 2 for loops over
+         * Bubble Sort is a simple sorting algorithm that uses 2 for-loops over
          * a data structure.
          * 
          * The inner for loop continually compares one element to the next and
@@ -24,10 +24,9 @@ public class _00_SortingDemo {
         
         // This for loop puts every value in the correct position
         for (int i = 0; i < arr.length; i++) {
-            
+        	
             // This for loop puts one value in the correct position
             for (int k = 0; k < arr.length - 1; k++) {
-                
                 // If the current element is bigger than the next...
                 if( arr[k] > arr[ k+1 ] ) {
                     
@@ -37,6 +36,7 @@ public class _00_SortingDemo {
                     arr[ k+1 ] = temp;
                 }
             }
+            
         }
         
         for( int i : arr ) {
