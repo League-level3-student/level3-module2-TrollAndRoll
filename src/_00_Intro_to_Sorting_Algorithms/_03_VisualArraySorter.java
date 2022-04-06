@@ -63,8 +63,8 @@ public class _03_VisualArraySorter extends PApplet {
     	
     	fill(0, 0, 0); //set color of graph (to white)
     	
-    	for(int i : intArr) {
-    		rect((width/intArr.length), height, (width/intArr.length), -i);
+    	for(int i = 0; i < intArr.length; i++) {
+    		rect(i * (width/intArr.length), height, (width/intArr.length), -intArr[i]);
     	}
     	
     	stepSort(intArr);
