@@ -2,6 +2,8 @@ package _01_Sorting_Algorithms;
 
 import java.util.Random;
 
+import _00_Intro_to_Sorting_Algorithms._01_SortedArrayChecker;
+
 public class ThanosSorter extends Sorter {
 	Random randy = new Random();
 
@@ -42,23 +44,21 @@ public class ThanosSorter extends Sorter {
 	 */
 	@Override
 	void sort(int[] array, SortingVisualizer display) {
-		for (int j = 0; j < array.length; j++) {
-			for (int i = 0; i < array.length - 1; i++) {
-				if (array[i] < array[i + 1]) {//out of order
-					int choice = randy.nextInt(2);// randomly choose a half to remove
-					System.out.println(choice);
-					if (choice == 0) {
-						for (int k = 0; k < (array.length / 2); k++) {//set one half to zero
-							array[k] = 0;
-						}
-					} else {
-						for (int k = (array.length/2); k < (array.length); k++) {//other half to zero
-							array[k] = 0;
-						}//TODO the array being cut in half needs to be dynamic every time (rn it's the same array cut in half so eventually it will always just all be zero)
-					}
-					display.updateDisplay();
-				}
+		int start = 0;
+		int mid = (array.length - 1) / 2;
+		while (_01_SortedArrayChecker.intArraySorted(array) == false) {// if the array is out of order
+//			int choice = randy.nextInt(2);
+//			System.out.println(choice);
+
+//					if (choice == 0) {
+//						
+//					}
+			for (int x = start; x < mid; x++) {//set first half to zeroes
+				array[x] = 0;
 			}
+			start = mid;//set new start to middle
+			mid = start + ((array.length - 1) - start) / 2;//set new mid point to the middle of the new smaller set of numbers (based on new start)
+			display.updateDisplay();
 		}
 	}
 }
