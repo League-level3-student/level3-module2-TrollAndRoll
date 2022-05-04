@@ -47,7 +47,7 @@ public class HeapSorter extends Sorter {
         // 4. create an integer called r and set it equal to 2 * i + 2
         int r = 2 * i + 2;
  
-        // 5. if l is less than n 
+        // 5. if l is less than n (step 5: finds what largest is)
         //    and array element at l is greater than array element at largest
         //    then set largest equal to l
         if (l < n && array[l] > array[largest]) {
