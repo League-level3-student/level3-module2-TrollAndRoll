@@ -8,7 +8,34 @@ import java.util.List;
 public class Algorithms {
 
 	public static String multiply(int num1, int num2) {
-		return null;
+		return num1 + " x " + num2 + " = " + num1 * num2;
+	}
+
+	public static boolean isPrime(int num) {//Criteria: divisible by only itself and 1
+		for (int i = 2; i < num; i++) {
+			if (num % i == 0) {//(modulo returns zero if a number is perfectly divisible)
+				return false;//returns false if it's divisible by a number greater than 1 and less than itself
+			}
+		}
+		return true;
+	}
+	
+	public static boolean isSquare(int num) {
+		for (int i = 1; i <= num; i++) {//If there is a number multiplied by itself equal to this number, it is a prime
+			if(i * i == num) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static boolean isCube(int num) {
+		for (int i = 1; i <= num; i++) {//If there is a number multiplied by itself equal to this number, it is a prime
+			if(i * i * i == num) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public static int findBrokenEgg(List<String> eggs) {
